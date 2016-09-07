@@ -54,13 +54,6 @@ public class PermissionsActivity extends AppCompatActivity {
             //(2)用户第一次deny了 true  （相当于给用户一次反悔的机会），同时在这次之后加上 checkbox  不在勾选
             //(3)勾选 不再提示
             //09-06 22:33:57.918 19524-19524/me.chunyu.spike.wcl_permission_demo D/wlx: shouldShowRequestPermissionRationale=false
-//            boolean b = ActivityCompat.shouldShowRequestPermissionRationale(this, permission);
-//            Log.d("wlx", "shouldShowRequestPermissionRationale=" + b);
-//            if (b) {
-//                Log.d("wlx", "shouldShowRequestPermissionRationale");
-//                showPermissionRetryDialog();
-//            } else {
-//                Log.d("wlx", "requestPermissions");
             requestPermissions(permission); // 请求权限
         } else {
             allPermissionsGranted(); // 全部权限都已获取
