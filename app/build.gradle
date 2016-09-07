@@ -1,9 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 'Google Inc.:Google APIs:23'
     buildToolsVersion "23.0.2"
 
+
+    compileSdkVersion 23
     defaultConfig {
         applicationId "me.chunyu.spike.wcl_permission_demo"
         minSdkVersion 14
