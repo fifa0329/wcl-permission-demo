@@ -47,13 +47,6 @@ public class PermissionsActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_permissions);
         mChecker = new PermissionsChecker(this);
-    }
-
-    @Override
-    protected void onResume() {
-        Log.d("wlx", "onResume");
-        super.onResume();
-
 
         String permission = getPermission();
         if (mChecker.lacksPermissions(permission)) {
@@ -69,10 +62,15 @@ public class PermissionsActivity extends AppCompatActivity {
 //            } else {
 //                Log.d("wlx", "requestPermissions");
             requestPermissions(permission); // 请求权限
-//            }
         } else {
             allPermissionsGranted(); // 全部权限都已获取
         }
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d("wlx", "onResume");
+        super.onResume();
     }
 
     // 返回传递的权限参数
@@ -192,6 +190,7 @@ public class PermissionsActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 startAppSettings();
+                finish();
             }
         });
 
